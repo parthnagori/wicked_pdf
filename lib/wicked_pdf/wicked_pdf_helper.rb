@@ -18,7 +18,7 @@ class WickedPdf
     end
 
     def wicked_pdf_image_tag(img, options = {})
-      image_tag "file:///#{WickedPdfHelper.root_path.join('public', 'images', img)}", options
+      image_tag "file:///#{WickedPdfHelper.root_path.join('tmp', img)}", options
     end
 
     def wicked_pdf_javascript_src_tag(jsfile, options = {})

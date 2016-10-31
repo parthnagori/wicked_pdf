@@ -64,11 +64,11 @@ class WickedPdf
             # asset_path returns an absolute URL using asset_host if asset_host is set
             pathname
           else
-            File.join(Rails.public_path, asset.sub(/\A#{Rails.application.config.action_controller.relative_url_root}/, ''))
+            File.join("#{Rails.root}/tmp", asset.sub(/\A#{Rails.application.config.action_controller.relative_url_root}/, ''))
           end
         else
           asset = find_asset(source)
-          asset ? asset.pathname : File.join(Rails.public_path, source)
+          asset ? asset.pathname : File.join("#{Rails.root}/tmp", source)
         end
       end
 
